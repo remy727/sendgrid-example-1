@@ -33,5 +33,12 @@ module SendgridExample1
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.from_email = ENV.fetch("FROM_EMAIL", "")
+    config.sendgrid = {
+      user_name: ENV.fetch("USER_NAME", ""),
+      password: ENV.fetch("PASSWORD", ""),
+      domain: ENV.fetch("DOMAIN", ""),
+    }
   end
 end
